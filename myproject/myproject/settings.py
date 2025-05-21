@@ -33,9 +33,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*8%a+l^o8+_ow8b$jt9jbh9eko_*5@z5bql63k^i+kpxq&qus('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['pagina_literatus.onrender.com', 'localhost']
 
 
 # Application definition
@@ -176,7 +175,7 @@ DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 #CSRF_TRUSTED_ORIGINS = ['http://*', 'https://literatustalleresycursos.com']

@@ -1,0 +1,5 @@
+services:
+  - type: web          # Specifies this is a web service (not a background worker)
+    name: myproject  # Replace with your app's name (e.g., "myblog")
+    runtime: python   # Tells Render to use Python
+    buildCommand: pip install -r requirements.txt && python manage.py collect
