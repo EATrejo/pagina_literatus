@@ -3,3 +3,7 @@ services:
     name: myproject  # Replace with your app's name (e.g., "myblog")
     runtime: python   # Tells Render to use Python
     buildCommand: pip install -r requirements.txt && python manage.py collect
+
+envVars:
+  - key: DATABASE_URL
+    value: postgresql://postgres:${DB_PASSWORD_YO}@localhost:5432/literatus-project-db

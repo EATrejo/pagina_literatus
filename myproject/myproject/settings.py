@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-*8%a+l^o8+_ow8b$jt9jbh9eko_*5@z5bql63k^i+kpxq&qus(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['pagina_literatus.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,9 +87,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
+#Render database url:
+import dj_database_url
 
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        'postgresql://neondb_owner:npg_qr4aDjWBlcV8@ep-curly-mode-a57q4bme-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require'
+    )
+}
+
+"""
+DATABASES = {
+    'default': dj_database_url.config(
+        default=f"postgresql://postgres:{os.environ.get('DB_PASSWORD_YO')}@localhost:5432/literatus-project-db",
+        conn_max_age=600
+    )
+}
+"""
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+"""
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
@@ -102,6 +120,7 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
+"""
 #A PARTIR DE AQUI ESTABA DEFINIDO PARA CORRE LA APP EN PRODUCCION
 #print(os.getenv('DATABASE_URL'))
 #DATABASES = {
@@ -155,6 +174,8 @@ STATIC_ROOT= os.path.join(BASE_DIR,'static_files')
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # For static files
 
 
 
