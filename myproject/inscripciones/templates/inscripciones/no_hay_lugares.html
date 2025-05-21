@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<h2>
+No hay lugares
+</h2>
+{% endblock  %}
+
+{% block content %}
+
+ <!-- Hero Section -->
+ <section id="hero" class="hero section" style="color: #212529;">
+
+  <div class="container">
+
+  
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+
+  
+
+      
+        <div class="row">
+          <div class="col-md-12 margen-superior">
+              <div class="section-header text-center pb-5"><br><br>
+                  <h2 class="text-white titulo-club">Lo sentimos, en esta tertulia no quedan lugares disponibles.</h2><br><br>
+                  <a class="btn btn-primary" style="margin-top: 5px;" href="{% url 'tertulias:list' %}">Regresar</a>
+              </div>
+              
+          </div>
+        </div>
+
+                        
+
+
+
+    </div>
+
+    
+
+  </div>
+
+</section><!-- /Hero Section -->
+
+{% endblock  %}

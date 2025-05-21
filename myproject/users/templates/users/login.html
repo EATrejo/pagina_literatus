@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<h2>
+Login Page
+</h2>
+{% endblock  %}
+
+{% block content %}
+
+ <!-- Hero Section -->
+ <section id="hero" class="hero section" style="color: #212529;">
+
+  <div class="container">
+
+  
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+      {% if user.is_authenticated %}
+      <h1>Hello World</h1>
+  
+      {% else %}
+      
+        <div class="row">
+          <div class="col-md-12 margen-superior">
+              <div class="section-header text-center pb-5"><br><br>
+                  <h2 class="text-white titulo-club">Bienvenido literatus</h2><br><br>
+                  <h2 class="text-white login-text">Entrar</h2>
+              </div>
+          </div>
+        </div>
+  
+            <div class="col-md-4 cuadro-login">
+              <div class="section-header text-center pb-5">
+
+                  <form method="POST"  action="{% url 'users:login' %}">
+                    {% csrf_token %}
+                        <div class="mb-3">
+                          <input type="text" class="form-control" name="email", placeholder="email" required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="password" class="form-control" name="password", placeholder="Password" required>
+                        </div>
+                      
+                        {% if request.GET.next %}
+                          <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary form-control boton-login">Entrar</button>
+                        <br></br>
+                        <a class="text-white" href="{% url 'users:forgot_password' %}">Restablecer contraseña?</a>
+                        <br><br>
+
+                  </form>
+                  
+                </div>
+                
+              </div>
+            </div>
+            
+      </div>
+    </div>    
+      
+  {% endif %}
+    </div>
+
+    
+
+  </div>
+
+</section><!-- /Hero Section -->
+
+{% endblock  %}

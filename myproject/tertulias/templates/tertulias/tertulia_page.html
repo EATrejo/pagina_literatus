@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Tertulia Sabatina
+{% endblock %}
+
+{% block content %}
+<section class="seccion-tertulia-sabatina">
+
+    <div class="tertulia-sabatina container">
+        <h2 class="titulo-club-2 text-white text-center md" style="font-size: 30px; margin-top: 10px;">Tertulias<span class="literatus" style="font-size: 20px;"> literarias</span> Sábatinas</h2>
+        <h1 class="titulo-tertulia-sabatina text-center">{{ tertulia.tertulia_name }}</h1>
+
+        <div class="tertulia-columns">
+            <div class="foto-tertulia">
+                <a class="foto-tertulia-sabatina" href="#"><img style="width: 100%;" src="{{ tertulia.tertulia_banner.url }}" alt=""></a>
+                <p class="text-white" style="text-align: justify; margin-top: 10px; margin-bottom: 20px;">La inscripción a cualquiera de las tertulias es totalmente gratis.</p>
+                <p class="text-white" style="text-align: justify;">Es requisito indispensable que hayas leído el libro (por lo menos una vez), de la tertulia a la cual te deseas inscribir.</p>
+                <br>
+                <p class="text-white" style="text-align: justify;">Una vez que realices tu inscripción recibirás vía correo electrónico tu confirmación así como el lugar exacto donde tendrá lugar el evento.</p>
+            </div>
+
+            <div class="texto-tertulia-sabatina">
+                <p class="mb-4 d-block"><span class="date"><small class="text-white" style="font-size: 14px;">Sede:</small> {{ tertulia.tertulia_address }}</span></p>
+                <br>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Descripción:</small> {{ tertulia.tertulia_description }}</p>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Fecha de inicio:</small> {{ tertulia.tertulia_fecha_de_inicio | date:"d-m-Y" }}</p>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Horario:</small> {{ tertulia.tertulia_horario }}</p>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Sesiones:</small> {{ tertulia.tertulia_sesiones }}</p>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Lugares disponibles:</small> {{ tertulia.tertulia_lugares }}</p>
+                <br>
+                <p class="no-mas-lugares">{% if tertulia.tertulia_lugares == 0 %}<span>Lo sentimos, NO quedan lugares disponibles</span>{% endif %}</p>
+                <div class="d-flex align-items-center author">
+                    <div class="name">
+                        {% if tertulia.tertulia_encargado_picture %}
+                        <div class="photo"><img src="{{ tertulia.tertulia_encargado_picture.url }}" alt="" class="img-fluid"></div>
+                        {% endif %}
+                        <p class="mb-4 d-block"><small class="text-white" style="margin-bottom: 0px;">Literatus a cargo:</small>
+                            <h3 class="m-0 p-0 nombre_encargado">{{ tertulia.tertulia_encargado }}</h3>
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Tertulia folio id #:</small><a href="{% url 'tertulias:page' slug=tertulia.slug %}">{{ tertulia.id }}</a></p>
+                <div class="d-flex align-items-center author">
+                    <small class="tertulia-importante">Es IMPORTANTE que retengas el folio id de la tertulia y el nombre de la misma, ya que son campos obligatorios al momento de rellenar la solicitud de inscripción</small>
+                    {% if tertulia.tertulia_lugares == 0 %}
+                    <a class="btn btn-primary" style="margin-top: 5px;" href="{% url 'inscripciones:no_hay_lugares' %}">Inscribirse</a>
+                    {% else %}
+                    <a class="btn btn-primary" style="margin-top: 5px;" href="{% url 'inscripciones:inscripcion_tertulia' %}">Inscribirse</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

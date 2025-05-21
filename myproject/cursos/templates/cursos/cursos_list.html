@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Cursos
+{% endblock  %}
+
+{% block content %}
+<section class="quienes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 margen-superior">
+                
+                <br>
+                <h1 class="titulo-club text-white text-center mt-5 mb-5">Talleres y Cursos</h1>
+            </div>
+        </div>
+    </div>
+
+         <!-- Trending Category Section -->
+    <section id="trending-category" class="trending-category section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="container" data-aos="fade-up">
+            <div class="row g-5">
+
+              <div class="col-lg-4">
+
+                  <div class="post-entry lg">
+                    <div class="post-meta"><span class="date">La guarida oficial</span> <span class="mx-1">•</span> <span>Literatus</span></div>
+                    <h2 style="font-size: 35px; margin-bottom: 50px;">Agradecimiento de todo corazón a La Borra del Café (Chapultepec, Guadalajara) por facilitarnos sus instalaciones.</h2>
+                    <a href="#"><img src="/static/assets/img/la-borra-del-cafe-chapultepec.jpg" alt="" class="img-fluid"></a>
+                    <p class="image-tertulia">La Borra del Café Sucursal Av. Chapultepec, Guadalajara, Jalisco.</p>
+    
+                    
+                  </div>
+
+              </div>
+
+              
+              <div class="col-lg-8">
+                
+                <div class="row g-5">
+                  {% if cursos %}
+                  {% for curso in cursos  %}  
+                  <div class="col-lg-4 border-start custom-border">
+                    <div class="post-entry">
+                      <a href="#"><img style="margin-bottom: 0;"src="{{ curso.banner.url }}" alt="" class="img-fluid"></a>
+                      <h2><small class="text-white">Curso/Taller:</small> {{ curso.title }}</h2>
+                      <div class="post-meta"><span class="date"><small class="text-white" style="font-size: 14px;">Sede:</small>Por definirse</span></div>
+                      <br>
+                      <p class="mb-4 d-block" style="text-align: justify !important"><small class="text-white" style="font-size: 14px;">Descripcion:</small>  {{ curso.description }}</p>
+                      <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Fecha de inicio:</small>Temporada Primavera</p>
+                      <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Costo del curso: $</small>Por definirse<small class="text-white"></small></p>
+                      <p class="mb-4 d-block"><small class="text-white" style="font-size: 14px;">Duracion del curso:</small >Por definirse<small class="text-white"></small></p>
+                    </div>
+                    <div class="d-flex align-items-center author">
+                      {% if curso.curso_encargado_picture %}
+                        <div class="photo"><img src="{{ curso.curso_encargado_picture.url }}" alt="" class="img-fluid"></div>
+                      {% endif %}
+                      <div class="name">
+                        <p class="mb-4 d-block"><small class="text-white" style="margin-buttom: 0px;">Literatus a cargo:</small >
+                          <h3 class="m-0 p-0 nombre_encargado" style="padding-top: -10px;">{{ curso.curso_encargado }}</h3>
+                      </div>
+                    </div>
+                    
+                    <div class="linea"></div>
+                  </div>
+                  
+                  {% endfor %}
+
+                  {% endif %}
+                 
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+</section>
+{% endblock  %}

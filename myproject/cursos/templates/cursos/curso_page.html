@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<h2>
+    {{ curso.title }}
+</h2>
+{% endblock  %}
+
+{% block content %}
+    <section>
+        
+                <div class="container-main-page">
+                    <div class="container-title">
+                        <h1 class="text-white curso-title"> {{ curso.title }} </h1>
+                    </div>
+                    <div class="container-page">
+                        <div class="container-image">
+                            <img class="banner" 
+                            src="{{ curso.banner.url }}" 
+                            alt="{{ curso.title }}">
+                        </div>
+                            <p class="parrafo-page text-white"> <strong>Taller:</strong> {{ curso.description }} </p>
+                            <p class="parrafo-page text-white"> <strong>Duración del curso:</strong> {{ curso.duracion_curso}} </p>
+                            <p class="parrafo-page text-white"> <strong>Lugar:</strong> {{ curso.lugar_curso}} </p>
+                            <p class="parrafo-page text-white"> <strong>Fecha de inicio:</strong> {{ curso.fecha_de_inicio}} </p>
+                            <p class="parrafo-page text-white"> <strong>Costo del curso o taller:</strong> {{ curso.costo_del_curso}} </p><br>
+                            <p class="parrafo-page text-white"></p>
+                        </div>
+                     </div>
+                     <div class="boton-container">
+                     <span class="boton-falso"><a class="boton_inscribirse-lectura" href="/inscripciones/nueva-inscripcion">Inscribirse</a></span>
+                    </div>
+
+    
+
+</section>
+{% endblock  %}

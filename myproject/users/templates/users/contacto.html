@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<h2>
+Contacto
+</h2>
+{% endblock  %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section>
+    <div class="container">
+        
+            <h1 class="titulo-club text-white text-center mt-5 mb-5"> Contáctanos </h1>
+            <br>
+            <center>
+                <h2 style="font-size: 20px;">
+                    {{mensaje}}
+
+                </h2>
+            </center>
+            <br>
+        <div class="text-center">
+            <h2 style="font-size: 30px;">¿Te gustaría coordinar alguna tertulia literaria sabatina en tu zona?</h2>
+            <br>
+            <p style="text-align:justify; font-size: 18px;">*Si eres un apasionado o apasionada de la literatura y tienes algo que ver con las letras: profesor(a) de filosofía y letras, profesor(a) de literatura, eres egresado de alguna de las siguientes carreras: Filosofía y Letras, Periodismo, Comunicaciones, Letras Hispanas, o similares.</p>
+            <br>
+            <p style="text-align:justify; font-size: 18px;">*También si simplemente en tu paso por este mundo has ganado o concursado en premios literarios como el <span style="font-style: italic;">Miguel de Cervantes Saavedra</span> , o has sido una poetisa o un poeta incomprendido recitando los poemas de tu autoría en el tumultoso trasporte público de tu ciudad, maldecido por el amor total a la rima y/o a la narrativa; te invitamos a que nos contactes si te gustaria coordinar una tertulia literaría en tu zona de tu libro favorito. Solamente dejanolos saber en el apartado "Tipo consulta", y cuentanos un poco de ti en el mensaje. Pronto te contactaremos para proporcionarte más información.</p> 
+            <br></br>
+            <h2 style="font-size: 30px;">Contáctanos si tienes alguna otra duda o sugerencia.</h2>
+            <br>
+            <p style="text-align:justify; font-size: 18px;">También nos puedes contactar si tienes alguna otra inquietud, que te responderemos a la brevedad.</p>
+        </div>
+        <br>
+        <div class="split style1">
+            <section>
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {{ form }}
+                    <br>
+
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                
+            </section>
+            <section>
+                <ul class="contact">
+                    <li>
+                        <h3 class="" style="font-size: 18px;">Literatus</h3>
+                        <span class="mb-5, pb-5">"Tu eres el personaje estelar de tu vida,<br />
+                         y las aventuras y peripecias que realices en tu historia, son las que van a contar tus nietos al mundo"...<br />
+                    </span>
+                    </li>
+                    <br></br>
+                    <li>
+                        <h3 class="" style="font-size: 18px;">Estefanía Montes Guillén</h3>
+                        <h3 class="" style="font-size: 18px;">Email:</h3>
+                        <a href="#">estefaniamontes777@hotmail.com</a>
+                    </li>
+                    <br></br>
+                    <li>
+                        <h3 class="" style="font-size: 18px;">Alonso Reyes Layena</h3>
+                        <h3 class="" style="font-size: 18px;">Email:</h3>
+                        <a href="#">layenaalonso@gmail.com</a>
+                    </li>
+                    <br></br>
+                    <li>
+                        <h3 class="" style="font-size: 18px;">Carlos Carpatos Gómez</h3>
+                        <h3 class="" style="font-size: 18px;">Email:</h3>
+                        <a href="#">carpatoscharlie@gmail.com</a>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+
+ 
+
+<!-- /Hero Section -->
+
+{% endblock  %}

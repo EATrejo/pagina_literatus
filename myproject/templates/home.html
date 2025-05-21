@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock  %}
+
+{% block content  %}
+
+<!-- Hero Section -->
+ <section id="hero" class="hero section">
+
+
+
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-out">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1 class="titulo-club-2 text-white">¿Quiénes somos?</h1>
+          <p class=" titulo-par-1"><span class="logo">Literatus</span>: <a href="about/"><small class="small-titulo">Club de lectura</small></a>  <a class="link-titulo" href="/cursos/">Talleres y Cursos</a></p></br>
+        </div>
+        
+        <p class="text-white parrafo-club">Nos reunimos por los cuatro puntos cardinales; con la misión de organizar tertulias literarias sabatinas, donde comentamos el mismo libro que nos apasiona a todos los concurrentes. Las Tertulias Sabatinas son coordinadas por el literatus a cargo de la zona; ya que él o ella son quienes tienen autoridad en la materia y conocimientos profundos de la obra. Si te gustaría asistir a alguna de las tertulias, conoce si hay alguna por llevarse a cabo de tu libro favorito y en tu localidad.
+          <br>
+          <br>
+          <p class="text-white parrafo-club">Conoce a nuestros literatus y sus localidades:</p>
+      </div>
+
+      <div class="row gy-4 mt-5">
+        <div class="col-md-6 col-lg-3" style="margin-bottom: 40px;" data-aos="zoom-out">
+          <div class="icon-box" style="padding-bottom: 30px;">
+            <img  class="foto" src="static/assets/img/alejandra.jpg" alt="">
+
+            <h3 class="titulo-docente"> María Alejandra Sántos</h3>
+              <p class="parrafo-docente">Egresada de la U.N.A.M. de la Licenciatura de Filosofía y Letras. 
+                Actualmente se desempeña como correctora de estilo en <strong>La Jornada</strong>. Ha participado
+                en diversos proyectos literarios de corte informativo para diferentes entidades en
+                la web. Así también se desempeñó como articulista de tiempo completo para la revista <strong>Algarabía</strong>
+                en la Ciudad de México.</p>
+                <h2 class="tertulias-literarias">TertuliasliterariasSabatinas</h2>
+                <p class="parrafo-docente">También es la literata encargada de coordinar la próxima tertulia sabatina de <strong  class="zona-tertulia">la zona sur de la Ciudad de México</strong> </p></br>
+                <h2 style="color: black; font-size: 20px; padding: 25px;">"Cien años de soledad"</h2>
+                <span></span><a class="btn btn-primary" href="{% url 'tertulias:page' slug=1 %}">Informes</a>
+
+
+
+                
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" style="margin-bottom: 40px;" data-aos="zoom-out">
+          <div class="icon-box">
+
+              <img  class="foto" src="static/assets/img/alonso.jpg" alt="">
+
+              <h3 class="titulo-docente"> Alonso Trejo Torres</h3>
+              <p class="parrafo-docente">Cursó la carrera de Comunicación visual en La Universidad de la Comunicación. 
+              Colaboró como columnista en <strong>Univision.com</strong> en la sección de deportes, especializándose en escribir artículos sobre la liga mexicana de futbol y sus protagonistas. <br>
+                <h2 class="tertulias-literarias">TertuliasliterariasSabatinas</h2>
+                <p class="parrafo-docente">También es el literato encargado de coordinar la próxima tertulia sabatina de <strong  class="zona-tertulia">la zona norte de la Ciudad de México</strong></p></br>
+                <h2 style="color: black; font-size: 20px; padding: 25px;">"Cien años de soledad"</h2>
+                <span></span><a class="btn btn-primary" href="{% url 'tertulias:page' slug=3 %}">Informes</a>
+
+
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" style="margin-bottom: 40px;" data-aos="zoom-out">
+          <div class="icon-box">
+            <img  class="foto" src="static/assets/img/maria-1.jpg" alt="">
+            
+            <h3 class="titulo-docente"> Inés Soraya Martínez</h3>
+              <p class="parrafo-docente">Licenciada en Ciencias de la Comunicación y Medios Digitales, por parte de la Universidad de Guadalajara(UDG). 
+                Orgullosamente tapatia, ha desarrollado su carrera en el medio televisivo de Guadalajara, comenzando su trayecto profesional como "jala cables"  en UDG TV donde despúes asendió a asistente de producción. Ahora trabaja como freelance para algunas productoras en aquella ciudad. <br>
+                <h2 class="tertulias-literarias">TertuliasliterariasSabatinas</h2>
+                <p class="parrafo-docente">También es la literata encargada de coordinar la próxima tertulia sabatina de <strong class="zona-tertulia">la zona centro de Guadalajara</strong></p></br>
+                <h2 style="color: black; font-size: 20px; padding: 25px;">"Pedro Paramo"</h2>
+                <span></span><a class="btn btn-primary" href="{% url 'tertulias:page' slug=2 %}">Informes</a>
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" style="margin-bottom: 40px;" data-aos="zoom-out">
+          <div class="icon-box">
+            <img  class="foto" src="static/assets/img/Panito-3.jpg" alt="">
+            <h3 class="titulo-docente"> Xavier Pano Segura</h3>
+              <p class="parrafo-docente">Curso la Licenciatura de Administracion en la facultad de la U.N.A.M. 
+                Su inquietud por la escritura lo llevó a amistarse mediante este vínculo con Hugo Torres, cineasta egresado de la Escuela Nacional de Artes Cinematográficas (ENAC) y con quien participó en la realización de varios guiones de cortometrajes y algunos spots de radio.  <br>
+                <h2 class="tertulias-literarias">TertuliasliterariasSabatinas</h2>
+                <p class="parrafo-docente">También es el literato encargado de coordinar la próxima tertulia sabatina de <strong class="zona-tertulia">la zona centro de la Ciudad de México</strong> </p></br>
+                <h2 style="color: black; font-size: 20px; padding: 25px;">"Pantaleón y las visitadoras"</h2>
+                <span></span><a class="btn btn-primary" href="{% url 'tertulias:page' slug=4 %}">Informes</a>
+          </div>
+        </div><!--End Icon Box -->
+
+
+      </div>
+    </div>
+   
+    
+  </section><!-- /Hero Section -->
+
+{% endblock  %}
