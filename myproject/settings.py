@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'users',
     'tertulias',
     'inscripciones',
+    'cloudinary',
+    'cloudinary_storage',
     
 ]
 
@@ -200,6 +202,14 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dqst03d1q',  # El que viste en el Dashboard
+    'API_KEY': '893314665561755',        # Copia tu API Key
+    'API_SECRET': 'Z8JG_dzqvfpzcwnc15qQGWc3CT8',  # Copia tu API Secret
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
