@@ -3,6 +3,11 @@ services:
     name: myproject  # Replace with your app's name (e.g., "myblog")
     runtime: python   # Tells Render to use Python
     buildCommand: pip install -r requirements.txt && python manage.py collect
+        mkdir -p media/                     # Crea la carpeta media
+        cp -r media_backup/* media/         # Copia las imágenes
+        pip install -r requirements.txt     # Instala dependencias
+        python manage.py collectstatic --noinput  # Recoge archivos estáticos
+    startCommand: gunicorn myproject.wsgi:application  # Cambia 'your_project'
 
 envVars:
   - key: DATABASE_URL

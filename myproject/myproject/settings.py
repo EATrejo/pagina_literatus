@@ -222,7 +222,7 @@ EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
