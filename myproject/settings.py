@@ -92,9 +92,15 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgresql://neondb_owner:npg_qr4aDjWBlcV8@ep-curly-mode-a57q4bme-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'literatus_project_db',
+        'USER': 'literatus_project_db_user',
+        'PASSWORD': 'mmoIzD4bWuMF4U3wWD7eDUNdpXyfjTS9',
+        'HOST': 'dpg-d0n8kgodl3ps739vv3o0-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},  # ¡Clave para Render!
+    }
 }
 
 """

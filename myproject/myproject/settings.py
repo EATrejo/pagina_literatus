@@ -88,16 +88,45 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
 #Render database url:
-import dj_database_url
-
-
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgresql://neondb_owner:npg_qr4aDjWBlcV8@ep-curly-mode-a57q4bme-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'literatus_project_db',
+        'USER': 'literatus_project_db_user',
+        'PASSWORD': 'mmoIzD4bWuMF4U3wWD7eDUNdpXyfjTS9',
+        'HOST': 'dpg-d0n8kgodl3ps739vv3o0-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},  # ¡Clave para Render!
+    }
 }
 
 """
+import os
+import dj_database_url
+
+# Configuración para Render (producción)
+if os.environ.get('RENDER'):
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),  # Render inyecta esta variable
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+# Configuración local (opcional, para desarrollo)
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'literatus-project-db',
+            'USER': 'postgres',
+            'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
+
 DATABASES = {
     'default': dj_database_url.config(
         default=f"postgresql://postgres:{os.environ.get('DB_PASSWORD_YO')}@localhost:5432/literatus-project-db",
