@@ -201,19 +201,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Configuración CORRECTA para estáticos:
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Tus archivos fuente locales
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Ruta donde se recolectarán (¡cambia a "staticfiles"!)
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+# WhiteNoise (para producción):
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
-STATIC_ROOT= os.path.join(BASE_DIR,'static_files')
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # For static files
+# Configuración para medios (Cloudinary):
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# ELIMINA o COMENTA estas líneas (conflictivas con Cloudinary):
+# MEDIA_URL = '/media/'  
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
