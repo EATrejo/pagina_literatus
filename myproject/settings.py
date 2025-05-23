@@ -209,7 +209,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 #ALLOWED_HOSTS = ['localhost', 'literatustalleresycursos.com', 'literatus-project-production.up.railway.app']
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
