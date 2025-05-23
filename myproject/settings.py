@@ -173,22 +173,18 @@ USE_TZ = True
 
 # Configuración CORRECTA para estáticos:
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Tus archivos fuente locales
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Ruta donde se recolectarán (¡cambia a "staticfiles"!)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Ruta a tus archivos locales
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # ¡Asegúrate que sea 'staticfiles'!
 
-# WhiteNoise (para producción):
+# Configuración STORAGES (Django 4.2+)
 STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
-# Configuración para medios (Cloudinary):
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-# ELIMINA o COMENTA estas líneas (conflictivas con Cloudinary):
-# MEDIA_URL = '/media/'  
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 
 # Default primary key field type
