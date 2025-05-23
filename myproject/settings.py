@@ -204,9 +204,9 @@ DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dqst03d1q',  # El que viste en el Dashboard
-    'API_KEY': '893314665561755',        # Copia tu API Key
-    'API_SECRET': 'Z8JG_dzqvfpzcwnc15qQGWc3CT8',  # Copia tu API Secret
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
