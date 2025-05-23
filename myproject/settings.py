@@ -201,7 +201,7 @@ EMAIL_HOST_PASSWORD = 'umqzseshiirfvwqh'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'literatus.com <layenaalonso@gmail.com>'
 
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
