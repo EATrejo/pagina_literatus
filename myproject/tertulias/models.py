@@ -1,13 +1,13 @@
 from django.db import models
 from django.db.models.signals import pre_save
 from myproject.utils import unique_slug_generator
-from cloudinary_storage.storage import MediaCloudinaryStorage
+
 
 # Create your models here.
 
 class Tertulia(models.Model):
     tertulia_name = models.CharField(max_length=100)
-    tertulia_banner = models.ImageField(upload_to='imagenes_admin/tertulias/',storage=MediaCloudinaryStorage())  # Fuerza Cloudinary aquí)
+    tertulia_banner = models.ImageField(upload_to='imagenes/')  # Fuerza Cloudinary aquí)
     tertulia_description = models.TextField(max_length=450, blank=True)
     tertulia_address = models.CharField(max_length=250, blank=True, null=True)
     tertulia_horario = models.CharField(max_length=100)

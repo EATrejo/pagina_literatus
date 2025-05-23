@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Curso(models.Model):
     title = models.CharField(max_length=100)
-    banner = models.ImageField(upload_to='imagenes_admin/cursos/')
+    banner = models.ImageField(upload_to='imagenes/')
     description = models.TextField()
     duracion_curso = models.DurationField(null=True)
     lugar_curso = models.TextField()
